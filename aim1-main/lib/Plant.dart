@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class Plant extends StatelessWidget {
@@ -6,14 +8,15 @@ class Plant extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(
-            'Aim',
-            style: TextStyle(color: Colors.purple),
+          backgroundColor: mobileBackgroundColor,
+          title: SvgPicture.asset(
+            "assets/img/logo.svg",
+            height: 25,
+            color: primaryColor,
           ),
-          backgroundColor: Colors.white,
-          elevation: 10,
           centerTitle: true,
         ),
+        
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -36,31 +39,31 @@ class Plant extends StatelessWidget {
                 ),
               ),
               PlantCard(
-                plantName: 'Tree',
+                plantName: 'greentree',
                 plantCost: 1020,
                 imagePath:
-                    'assets/img/Tree.jpeg', // Replace with your asset path
+                    'assets/img/greentree.png', // Replace with your asset path
               ),
 
               PlantCard(
-                plantName: 'Sakura',
+                plantName: 'sakura',
                 plantCost: 3000,
                 imagePath:
-                    'assets/img/sakura.jpeg', // Replace with your asset path
+                    'assets/img/sakura.png', // Replace with your asset path
               ),
 
               PlantCard(
-                plantName: 'Chrysanthemum',
+                plantName: 'yellowtree',
                 plantCost: 900,
                 imagePath:
-                    'assets/img/Chrysanthemum.png', // Replace with your asset path
+                    'assets/img/yellowtree.png', // Replace with your asset path
               ),
 
                 PlantCard(
-                plantName: 'Sunflower',
+                plantName: 'sunflower',
                 plantCost: 700,
                 imagePath:
-                    'assets/img/sunflower.jpeg', // Replace with your asset path
+                    'assets/img/sunflower.png', // Replace with your asset path
               ),
             ],
           ),

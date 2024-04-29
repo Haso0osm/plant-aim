@@ -1,11 +1,13 @@
-import 'package:aim1/HomePageWidget.dart';
+import 'package:aim1/mobile.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      appBar:AppBar(),
+      body:
+      Container(
         decoration: BoxDecoration(
           color: Colors.white,
         ),
@@ -14,7 +16,7 @@ class Login extends StatelessWidget {
         ),
         padding: EdgeInsets.fromLTRB(14, 50, 56, 50),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               '<',
@@ -56,7 +58,7 @@ class Login extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(19),
                 border: Border.all(
-                  color: Color.fromRGBO(77, 95, 95, 0.71),
+                  color: Color.fromRGBO(78, 95, 95, 0.71),
                 ),
                 color: Colors.white,
               ),
@@ -100,7 +102,7 @@ class Login extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => HomePageWidget(),
+                    builder: (context) => Mobile(),
                   ),
                 );
               },
@@ -124,6 +126,7 @@ class Login extends StatelessWidget {
               ),
             ),
             SizedBox(height: 183),
+
             Text(
               'Forgot your password?',
               style: TextStyle(
@@ -133,23 +136,24 @@ class Login extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            RichText(
-              text: TextSpan(
-                text: "Don't have an account? ",
+            Text("Don't have an account? ",
                 style: TextStyle(
                   fontSize: 15,
                   fontFamily: 'Nunito',
                   color: Color.fromRGBO(0, 10, 255, 0.75),
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Create account',
-                    style: TextStyle(
-                      color: Color.fromRGBO(0, 10, 255, 1),
-                    ),
-                  ),
-                ],
+                ),),
+                
+          GestureDetector(
+             onTap: (){Navigator.pushNamed(context,'/createaccount');},
+             child:
+            Text(
+              'Create Account',
+              style: TextStyle(
+                color: Color.fromRGBO(0, 10, 255, 0.75),
+                fontSize: 15,
+                fontFamily: 'Nunito',
               ),
+            ),
             ),
           ],
         ),

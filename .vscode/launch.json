@@ -1,0 +1,28 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "aim1-main",
+      "cwd": "aim1-main",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "aim1-main (profile mode)",
+      "cwd": "aim1-main",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "aim1-main (release mode)",
+      "cwd": "aim1-main",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}

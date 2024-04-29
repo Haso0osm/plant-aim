@@ -1,10 +1,14 @@
-import 'package:aim1/HomePageWidget.dart';
+
+// ignore_for_file: unused_import
+
+import 'mobile.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(),
       body:SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child:
@@ -125,15 +129,7 @@ class CreateAccountPageWidget extends StatelessWidget {
             SizedBox(height: 23),
             ElevatedButton(
               onPressed: () {
-                // Perform account creation logic here
-
-                // Navigate to the home page
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => HomePageWidget(),
-                  ),
-                );
+                Navigator.pushNamed(context, "/home");
               },
               child: Text(
                 'Create Account',
@@ -155,13 +151,11 @@ class CreateAccountPageWidget extends StatelessWidget {
               ),
             ),
             SizedBox(height: 112),
-            Text(
-              'Already have an account? ',
-              style: TextStyle(
-                fontSize: 15,
-                fontFamily: 'Nunito',
-              ),
-            ),
+            Text('Already have an account? ',style: TextStyle(fontSize: 15,fontFamily: 'Nunito'),),
+
+            GestureDetector(
+             onTap: (){Navigator.pushNamed(context, '/login');},
+             child:
             Text(
               'Log In',
               style: TextStyle(
@@ -169,6 +163,7 @@ class CreateAccountPageWidget extends StatelessWidget {
                 fontSize: 15,
                 fontFamily: 'Nunito',
               ),
+            ),
             ),
           ],
         ),

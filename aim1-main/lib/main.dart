@@ -1,6 +1,15 @@
-import 'package:aim1/Plant.dart';
+import 'package:aim1/Rank.dart';
+import 'package:aim1/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'StartingpageWidget.dart';
+import 'Login.dart';
+import 'Createaccount.dart';
+import 'Mobile.dart';
+import 'upload.dart';
+import 'virtualgarden.dart';
+import 'message.dart';
+import 'editprofile.dart';
 
 void main() {
   debugPaintSizeEnabled = false;
@@ -15,7 +24,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(useMaterial3: true),
-      home: Plant(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => StartingpageWidget(),
+        '/login': (context) => Login(),
+        '/createaccount': (context) => CreateAccountPageWidget(),
+        '/home': (context) => Mobile(),
+        '/upload': (context) => Upload(),
+        '/message': (context) => MyApp(),
+        '/garden': (context) => Virtualgarden(),
+        '/setting': (context) => Settings(),
+        '/edit': (context) => Editprofile(),
+      },
     );
   }
 }
